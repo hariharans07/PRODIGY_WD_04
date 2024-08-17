@@ -1,0 +1,370 @@
+
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f9;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background: brown;
+    color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #a8dadc;
+}
+
+section {
+    padding: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+footer {
+    background:brown;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Home Page */
+#home {
+    background: #ffffff;
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#home h1 {
+    font-size: 2.5em;
+    margin: 0;
+    color: brown;
+}
+
+#home p {
+    font-size: 1.2em;
+    color:black;
+}
+
+#home .photo {
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 20px auto;
+}
+
+#home .photo img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* About Page */
+#about {
+    background: #ffffff;
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#about h2 {
+    color:brown;
+}
+
+#about .section-content {
+    margin: 20px 0;
+}
+
+#about .section-content h3 {
+    background: #e6f7ff;
+    padding: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+    
+
+#about .section-content .details {
+    display: none;
+    padding: 10px;
+    background: #f0f8ff;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+#about .section-content .details.show {
+    display: block;
+}
+
+/* Skills Page */
+#skills {
+    background: #ffffff;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#skills h2 {
+    color: brown;
+}
+
+#skills .skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#skills .skill {
+    background: #e6f7ff;
+    border: 1px solid #b3e0ff;
+    border-radius: 8px;
+    padding: 15px;
+    margin: 10px;
+    width: 200px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#skills .skill:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#skills .skill h3 {
+    margin: 0;
+    color: brown;
+}
+
+/* Projects Page */
+#projects {
+    background: #ffffff;
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#projects h2 {
+    color:brown;
+}
+
+.project {
+    position: relative;
+    display: inline-block;
+    margin: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    cursor: pointer;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.project:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transform: scale(1.03);
+}
+
+.project h3 {
+    padding: 10px;
+    background-color: #f0f8ff;
+    border-radius: 8px;
+    margin: 0;
+    color: brown;
+}
+
+.project .show-photo {
+    display: block;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background-color: #4682b4;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.project .show-photo:hover {
+    background-color: #4169e1;
+}
+
+.zoomed-image {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 5px;
+}
+
+.zoomed-image img {
+    max-width: 80vw; /* Ensure the zoomed image fits well on the screen */
+    max-height: 80vh;
+    border-radius: 8px;
+}
+
+.zoomed-image.show {
+    display: block;
+}
+
+.zoomed-image .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color:brown;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.zoomed-image .close:hover {
+    color: #ff6347;
+}
+
+/* Activities Page */
+#activities {
+    background: #ffffff;
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#activities h2 {
+    color: brown;
+}
+
+.activity {
+    margin: 20px 0;
+    border: 1px solid #4682b4;
+    border-radius: 8px;
+    padding: 15px;
+    background: #f0f8ff;
+}
+
+.activity h3 {
+    color: brown;
+}
+
+/* Contact Page */
+#contact {
+    background: #ffffff;
+    padding: 40px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#contact h2 {
+    color: brown;
+}
+
+#contact form {
+    max-width: 600px;
+    margin: auto;
+}
+
+#contact label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+#contact input, #contact textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+#contact button {
+    background-color: brown;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contact button:hover {
+    background-color: brown;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes bounceIn {
+    from {
+        transform: scale(0.3);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.1);
+        opacity: 1;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+}

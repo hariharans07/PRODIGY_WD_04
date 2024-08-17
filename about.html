@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Hariharan S</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        /* Ensure footer sticks to bottom */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
+        footer {
+            margin-top: auto;
+        }
+
+        /* About Page Styles */
+        #about {
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #about h2 {
+            color:brown;
+        }
+
+    
+        #about .section-content h3 {
+            padding: 15px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            position: relative;
+            font-size: 1.2em;
+        }
+
+        
+
+        #about .section-content h3::after {
+            content: "⮟";
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: transform 0.3s ease;
+            font-size: 1.2em;
+        }
+
+        #about .section-content .details {
+            display: none;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+            animation: slideDown 0.5s ease;
+        }
+
+        #about .section-content .details.show {
+            display: block;
+        }
+
+        #about .section-content .details.hide h3::after {
+            transform: rotate(180deg) translateY(-50%);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="activities.html">Activities</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="objective">
+            <h3>Career Objectives</h3>
+            <p>Seeking a dynamic role as Front End Developer with Infotech where my vibrant energy, enthusiasm for learning, and commitment to contributing effectively can help achieve the goals and drive positive changes.</p>
+        </div>
+
+        <div class="section-content">
+            <h3 onclick="toggleDetails('education-details')">Education</h3>
+            <div id="education-details" class="details">
+                <p><strong>M.KUMARASAMY COLLEGE OF ENGINEERING, KARUR</strong><br>B.E in Computer Science And Engineering (2022-2026)</p>
+                <p><strong>NARAYANA JUNIOR COLLEGE, VIJAYAWADA</strong><br>Higher Secondary School Certificate 2022 Percentage-84.0%</p>
+                <p><strong>NARAYANA CO SCHOOL, NELLORE</strong><br>Secondary School Leaving Certificate 2020 Percentage-99.6%</p>
+            </div>
+        </div>
+
+        <!-- Add more sections as needed -->
+
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Hariharan. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleDetails(id) {
+            const element = document.getElementById(id);
+            if (element.classList.contains('show')) {
+                element.classList.remove('show');
+                element.classList.add('hide');
+            } else {
+                element.classList.add('show');
+                element.classList.remove('hide');
+            }
+        }
+    </script>
+</body>
+</html>

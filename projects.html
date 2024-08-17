@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Hariharan</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <style>
+        #projects {
+            padding: 20px;
+        }
+
+        .project {
+            position: relative;
+            display: inline-block;
+            margin: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: box-shadow 0.3s ease;
+            cursor: pointer;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        .project:hover {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .project h3 {
+            padding: 10px;
+            border-radius: 8px;
+            margin: 0;
+        }
+
+        .project .show-photo {
+            display: block;
+            margin: 10px auto;
+            padding: 10px 20px;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .project .show-photo:hover {
+            background-color: brown;
+        }
+
+        .zoomed-image {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 1000;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+        .zoomed-image img {
+            max-width: 80vw; /* Ensure the zoomed image fits well on the screen */
+            max-height: 80vh;
+            border-radius: 8px;
+        }
+
+        .zoomed-image.show {
+            display: block;
+        }
+
+        .zoomed-image .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+            transition: color 0.3s ease-in-out;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="skills.html">Skills</a></li>
+                <li><a href="activities.html">Activities</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="projects">
+        <h2>Projects</h2>
+
+        <div class="project">
+            <h3>Student Dropout Analysis Website</h3>
+            <button class="show-photo" onclick="showZoomedImage('1.jpeg')">Show Photo</button>
+            <p>Completed a project titled “Student Dropout Analysis Website” in M.KUMARASAMY COLLEGE OF ENGINEERING, Karur on 4th semester, 2024.</p>
+        </div>
+
+        <!-- Add more projects similarly -->
+    </section>
+
+    <div id="zoomed-image" class="zoomed-image">
+        <span class="close" onclick="hideZoomedImage()">&times;</span>
+        <img id="zoomed-img" src="" alt="Zoomed Project Image">
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Hariharan. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function showZoomedImage(imageSrc) {
+            document.getElementById('zoomed-img').src = imageSrc;
+            document.getElementById('zoomed-image').classList.add('show');
+        }
+
+        function hideZoomedImage() {
+            document.getElementById('zoomed-image').classList.remove('show');
+        }
+    </script>
+</body>
+</html>
